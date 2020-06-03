@@ -1,0 +1,115 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BirthdayApp.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/BirthdayApp.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BirthdayApp.Business.dll": {}
+        }
+      },
+      "BirthdayApp.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "BirthdayApp.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BirthdayApp.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BirthdayApp.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BirthdayApp.Business/1.0.0": {
+      "type": "project",
+      "path": "../BirthdayApp.Business/BirthdayApp.Business.csproj",
+      "msbuildProject": "../BirthdayApp.Business/BirthdayApp.Business.csproj"
+    },
+    "BirthdayApp.Data/1.0.0": {
+      "type": "project",
+      "path": "../BirthdayApp.Data/BirthdayApp.Data.csproj",
+      "msbuildProject": "../BirthdayApp.Data/BirthdayApp.Data.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "BirthdayApp.Business >= 1.0.0",
+      "BirthdayApp.Data >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {},
+    "E:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+      "projectName": "BirthdayApp",
+      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj"
+            },
+            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

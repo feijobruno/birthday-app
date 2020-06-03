@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BirthdayApp.Data/1.0.0": {
+        "dependencies": {
+          "BirthdayApp.Business": "1.0.0"
+        },
+        "runtime": {
+          "BirthdayApp.Data.dll": {}
+        }
+      },
+      "BirthdayApp.Business/1.0.0": {
+        "runtime": {
+          "BirthdayApp.Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BirthdayApp.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BirthdayApp.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

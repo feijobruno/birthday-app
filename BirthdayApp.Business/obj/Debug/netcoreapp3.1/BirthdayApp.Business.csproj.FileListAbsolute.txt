@@ -1,0 +1,9 @@
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\bin\Debug\netcoreapp3.1\BirthdayApp.Business.deps.json
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\bin\Debug\netcoreapp3.1\BirthdayApp.Business.dll
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\bin\Debug\netcoreapp3.1\BirthdayApp.Business.pdb
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.csprojAssemblyReference.cache
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.AssemblyInfoInputs.cache
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.AssemblyInfo.cs
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.dll
+C:\Users\USUARIO\source\repos\infnet\csharp\BirthdayApp\BirthdayApp.Business\obj\Debug\netcoreapp3.1\BirthdayApp.Business.pdb
