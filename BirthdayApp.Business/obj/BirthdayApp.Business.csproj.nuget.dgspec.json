@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {}
+    "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {
+    "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj",
         "projectName": "BirthdayApp.Business",
-        "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj",
+        "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\obj\\",
+        "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "E:\\Microsoft\\Xamarin\\NuGet\\"

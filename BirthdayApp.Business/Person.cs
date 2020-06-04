@@ -26,5 +26,8 @@ namespace BirthdayApp.Business
             }
             return (nextBirthday - DateTime.Today).Days;
         }
+        public Person()
+        {
+        }
     }
 }

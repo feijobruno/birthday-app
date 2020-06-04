@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
       "projectName": "BirthdayApp",
-      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp\\obj\\",
+      "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\Microsoft\\Xamarin\\NuGet\\"
@@ -76,11 +76,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj"
+            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Business\\BirthdayApp.Business.csproj"
             },
-            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj": {
-              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj"
+            "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp.Data\\BirthdayApp.Data.csproj"
             }
           }
         }

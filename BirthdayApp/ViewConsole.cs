@@ -18,15 +18,19 @@ namespace BirthdayApp
             Console.WriteLine("Selecione uma das opções abaixo: ");
             Console.WriteLine("1 - Pesquisar pessoas ");
             Console.WriteLine("2 - Adicionar pessoas");
-            Console.WriteLine("3 - Sair");
+            Console.WriteLine("3 - Editar pessoas");
+            Console.WriteLine("4 - Excluir pessoas");
+            Console.WriteLine("5 - Sair");
 
             char optionSelected = Console.ReadLine().ToCharArray()[0];
             switch (optionSelected)
             {
                 case '1': FindPerson(); break;
                 case '2': NewPerson(); break;
-                case '3':
-                    //Exit App
+                case '3': UpdatePerson(); break;
+                case '4': DeletePerson(); break;
+                case '5':
+                    //Sair
                     Console.WriteLine("Bye bye");
                     Environment.Exit(1);
                     break;
@@ -58,12 +62,12 @@ namespace BirthdayApp
             {
                 Console.Clear();
                 var person = new Person(firstName, lastName, birthday);
-                DatabaseMemory.AddNewPerson(person);
+                DatabaseMemory.SalvePerson(person);
                 Console.WriteLine("Dados adicionados com sucesso!");
                 PressAnyKey();
                 MainMenu();
             }
-            if (option == '2')
+            else if (option == '2')
             {
                 Console.WriteLine("Insira os dados novamente, por favor:");
                 PressAnyKey();
@@ -102,6 +106,66 @@ namespace BirthdayApp
                 MainMenu();
             }
         }
+
+        static void UpdatePerson()
+        {
+            Console.Clear();
+            Console.WriteLine("Dados das pessoas:");
+            ShowAllPeople();
+            Console.WriteLine("Selecione qual ID você deseja alterar:");
+            int option = int.Parse(Console.ReadLine());
+            var person = DatabaseMemory.GetPersonById(option);
+
+            //ALTERAR OS DADOS
+            Console.WriteLine("Digite o novo nome:");
+            string newFirstName = Console.ReadLine();
+            person.FirstName = newFirstName;
+
+            Console.WriteLine("Digite o novo sobrenome:");
+            string newLastName = Console.ReadLine();
+            person.LastName = newLastName;
+
+            Console.WriteLine("Digite a nova data do nascimento no formato dd/MM/yyyy: ");
+            var newBirthday = DateTime.Parse(Console.ReadLine());
+            person.Birthday = newBirthday;
+
+            //SALVAR DADOS
+            DatabaseMemory.SalvePerson(person);
+            Console.WriteLine("Dados editados com sucesso!");
+            PressAnyKey();
+            MainMenu();
+        }
+
+        static void DeletePerson()
+        {
+            //EXCLUIR O DADO
+            Console.Clear();
+            Console.WriteLine("Dados das pessoas:");
+            ShowAllPeople();
+            Console.WriteLine("Selecione qual ID você deseja excluir:");
+            int option = int.Parse(Console.ReadLine());
+            var person = DatabaseMemory.GetPersonById(option);
+            if (person != null)
+            {
+                DatabaseMemory.DeletePerson(person);
+                Console.WriteLine("Dado excluído com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("ID inválido ou pessoa não encontrada");
+            }
+            PressAnyKey();
+            MainMenu();
+        }
+
+        static void ShowAllPeople()
+        {
+            foreach (var person in DatabaseMemory.GetAllPeople())
+            {
+                Console.WriteLine($"{person.Id} - {person.FirstName} {person.LastName} - {person.Birthday.ToString("d")}");
+            }
+        }
+
         static void PressAnyKey()
         {
             Console.WriteLine("Pressione qualquer tecla para continuar");

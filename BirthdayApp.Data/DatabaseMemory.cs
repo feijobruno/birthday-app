@@ -10,9 +10,20 @@ namespace BirthdayApp.Data
     {
         private static List<Person> peopleList = new List<Person>();
 
-        public static void AddNewPerson(Person person)
+        public static void SalvePerson(Person person)
         {
-            peopleList.Add(person);
+            bool personAlreadyExist = false;
+            foreach(var peopleFound in peopleList)
+            {
+                if(peopleFound == person)
+                {
+                    personAlreadyExist = true;
+                    break;
+                }
+            }
+            if(personAlreadyExist == false){
+                peopleList.Add(person);
+            }          
         }
 
         public static List<Person> GetAllPeople()
@@ -28,6 +39,15 @@ namespace BirthdayApp.Data
              - In queries prefer returns ienumerable.
             */
             return peopleList.Where(person => person.FirstName.Contains(firstName, StringComparison.InvariantCultureIgnoreCase));
+        }
+        public static Person GetPersonById(int id)
+        {
+            return peopleList.Find(person => person.Id == id);
+        }
+
+        public static void DeletePerson(Person person)
+        {
+            peopleList.Remove(person);
         }
     }
 }
