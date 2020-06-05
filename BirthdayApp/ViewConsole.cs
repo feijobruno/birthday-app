@@ -62,7 +62,7 @@ namespace BirthdayApp
             {
                 Console.Clear();
                 var person = new Person(firstName, lastName, birthday);
-                DatabaseMemory.SalvePerson(person);
+                DatabaseFile.SalvePerson(person);
                 Console.WriteLine("Dados adicionados com sucesso!");
                 PressAnyKey();
                 MainMenu();
