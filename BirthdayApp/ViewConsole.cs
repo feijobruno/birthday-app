@@ -30,7 +30,7 @@ namespace BirthdayApp
                 case '3': UpdatePerson(); break;
                 case '4': DeletePerson(); break;
                 case '5':
-                    //Sair
+                    //EXIT APP
                     Console.WriteLine("Bye bye");
                     Environment.Exit(1);
                     break;
@@ -116,7 +116,7 @@ namespace BirthdayApp
             int option = int.Parse(Console.ReadLine());
             var person = DatabaseMemory.GetPersonById(option);
 
-            //ALTERAR OS DADOS
+            //UPDATE DATA
             Console.WriteLine("Digite o novo nome:");
             string newFirstName = Console.ReadLine();
             person.FirstName = newFirstName;
@@ -129,7 +129,7 @@ namespace BirthdayApp
             var newBirthday = DateTime.Parse(Console.ReadLine());
             person.Birthday = newBirthday;
 
-            //SALVAR DADOS
+            //SAVE DATA
             DatabaseMemory.SalvePerson(person);
             Console.WriteLine("Dados editados com sucesso!");
             PressAnyKey();
@@ -138,7 +138,6 @@ namespace BirthdayApp
 
         static void DeletePerson()
         {
-            //EXCLUIR O DADO
             Console.Clear();
             Console.WriteLine("Dados das pessoas:");
             ShowAllPeople();
