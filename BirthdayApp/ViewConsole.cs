@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using BirthdayApp.Business;
 using BirthdayApp.Data;
+using System.Dynamic;
 
 namespace BirthdayApp
 {
@@ -55,6 +56,7 @@ namespace BirthdayApp
             Console.WriteLine("Os dados estão corretos? ");
             Console.WriteLine($"{firstName} {lastName}");
             Console.WriteLine(birthday.ToString("d"));
+
             Console.WriteLine("1 - Sim \n2 - Não");
             char option = Console.ReadLine().ToCharArray()[0];
 
@@ -62,7 +64,8 @@ namespace BirthdayApp
             {
                 Console.Clear();
                 var person = new Person(firstName, lastName, birthday);
-                DatabaseFile.SalvePerson(person);
+
+                Db.SalvePerson(person);
                 Console.WriteLine("Dados adicionados com sucesso!");
                 PressAnyKey();
                 MainMenu();
@@ -80,7 +83,7 @@ namespace BirthdayApp
             Console.WriteLine("Digite o nome, ou parte do nome, da pessoa que deseja encontrar:");
             string name = Console.ReadLine();
             Console.WriteLine("Selecione uma das opções abaixo para visualizar os dados de uma das pessoas encontradas:");
-            var people = DatabaseMemory.GetAllPeople(name).ToList();
+            var people = Db.GetAllPeople(name).ToList();
             int peopleCount = people.Count();
 
             if (peopleCount > 0)
@@ -91,7 +94,6 @@ namespace BirthdayApp
                 }
                 int optionId = int.Parse(Console.ReadLine());
                 var chosenPerson = people.Single(pessoa => pessoa.Id.Equals(optionId));
-
                 Console.WriteLine("Dados da pessoa:");
                 Console.WriteLine($"Nome Completo: {chosenPerson.FirstName} {chosenPerson.LastName}");
                 Console.WriteLine($"Data do Aniversário: {chosenPerson.Birthday.ToString("d")}");
@@ -114,7 +116,7 @@ namespace BirthdayApp
             ShowAllPeople();
             Console.WriteLine("Selecione qual ID você deseja alterar:");
             int option = int.Parse(Console.ReadLine());
-            var person = DatabaseMemory.GetPersonById(option);
+            var person = Db.GetPersonById(option);
 
             //UPDATE DATA
             Console.WriteLine("Digite o novo nome:");
@@ -130,7 +132,7 @@ namespace BirthdayApp
             person.Birthday = newBirthday;
 
             //SAVE DATA
-            DatabaseMemory.SalvePerson(person);
+            Db.SalvePerson(person);
             Console.WriteLine("Dados editados com sucesso!");
             PressAnyKey();
             MainMenu();
@@ -143,10 +145,10 @@ namespace BirthdayApp
             ShowAllPeople();
             Console.WriteLine("Selecione qual ID você deseja excluir:");
             int option = int.Parse(Console.ReadLine());
-            var person = DatabaseMemory.GetPersonById(option);
+            var person = Db.GetPersonById(option);
             if (person != null)
             {
-                DatabaseMemory.DeletePerson(person);
+                Db.DeletePerson(person);
                 Console.WriteLine("Dado excluído com sucesso!");
             }
             else
@@ -159,7 +161,8 @@ namespace BirthdayApp
 
         static void ShowAllPeople()
         {
-            foreach (var person in DatabaseMemory.GetAllPeople())
+ 
+            foreach (var person in Db.GetAllPeople())
             {
                 Console.WriteLine($"{person.Id} - {person.FirstName} {person.LastName} - {person.Birthday.ToString("d")}");
             }
@@ -170,6 +173,15 @@ namespace BirthdayApp
             Console.WriteLine("Pressione qualquer tecla para continuar");
             Console.ReadKey();
             Console.Clear();
+        }
+
+        //CREATE A PROPERTY DATABASE 
+        public static Database Db
+        {
+            get 
+            {
+                return new DatabaseFile();
+            }
         }
     }
 }

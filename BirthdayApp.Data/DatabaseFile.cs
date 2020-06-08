@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using BirthdayApp.Business;
 using BirthdayApp.Data;
 
 
 namespace BirthdayApp.Data
 {
-    public class DatabaseFile
+    public class DatabaseFile : Database
     {
-        private static List<Person> peopleList = new List<Person>();
-
-        public static void SalvePerson(Person person)
+        public override void SalvePerson(Person person) 
         {
             bool personAlreadyExist = false;
-            foreach (var peopleFound in peopleList)
-            {
-                if (peopleFound == person)
-                {
-                    personAlreadyExist = true;
-                    break;
-                }
-            }
             if (personAlreadyExist == false)
             {
                 string fileName = GetNameFile();
@@ -30,7 +21,7 @@ namespace BirthdayApp.Data
             }
         }
 
-        static string GetNameFile()
+        private static string GetNameFile()
         {
             var folderDesktop = Environment.SpecialFolder.Desktop;
             string pathFolderDesktop = Environment.GetFolderPath(folderDesktop);
@@ -39,8 +30,7 @@ namespace BirthdayApp.Data
             return pathFolderDesktop + fileName;
         }
 
-
-        public static IEnumerable<Person> GetAllPeople()
+        public override IEnumerable<Person> GetAllPeople()
         {
             string fileName = GetNameFile();
             string result = File.ReadAllText(fileName);
@@ -67,16 +57,17 @@ namespace BirthdayApp.Data
             return peopleList;
         }
 
-        public static IEnumerable<Person> GetAllPeople(string firstName)
+        public override IEnumerable<Person> GetAllPeople(string firstName)
         {
-            throw new NotImplementedException();
+            var peopleList = GetAllPeople();
+            return peopleList.Where(person => person.FirstName.Contains(firstName, StringComparison.InvariantCultureIgnoreCase));
         }
-        public static Person GetPersonById(int id)
+        public override Person GetPersonById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public static void DeletePerson(Person person)
+        public override void DeletePerson(Person person)
         {
             throw new NotImplementedException();
         }

@@ -4,13 +4,13 @@ using System.Text;
 using BirthdayApp.Business;
 using System.Linq;
 
-namespace BirthdayApp.Data
+namespace BirthdayApp.Data 
 {
-    public class DatabaseMemory
+    public class DatabaseMemory : Database
     {
         private static List<Person> peopleList = new List<Person>();
 
-        public static void SalvePerson(Person person)
+        public override void SalvePerson(Person person)
         {
             bool personAlreadyExist = false;
             foreach(var peopleFound in peopleList)
@@ -26,12 +26,12 @@ namespace BirthdayApp.Data
             }          
         }
 
-        public static List<Person> GetAllPeople()
+        public override IEnumerable<Person> GetAllPeople()
         {
             return peopleList;
         }
 
-        public static IEnumerable<Person> GetAllPeople(string firstName)
+        public override IEnumerable<Person> GetAllPeople(string firstName)
         {
             /*
              Tips:
@@ -40,12 +40,12 @@ namespace BirthdayApp.Data
             */
             return peopleList.Where(person => person.FirstName.Contains(firstName, StringComparison.InvariantCultureIgnoreCase));
         }
-        public static Person GetPersonById(int id)
+        public override Person GetPersonById(int id)
         {
             return peopleList.Find(person => person.Id == id);
         }
 
-        public static void DeletePerson(Person person)
+        public override void DeletePerson(Person person)
         {
             peopleList.Remove(person);
         }
