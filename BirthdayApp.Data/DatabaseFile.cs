@@ -16,7 +16,7 @@ namespace BirthdayApp.Data
             if (personAlreadyExist == false)
             {
                 string fileName = GetNameFile();
-                string format = $"{person.FirstName}, {person.LastName}, {person.Birthday};";
+                string format = $"{person.FirstName},{person.LastName},{person.Birthday};";
                 File.AppendAllText(fileName, format);
             }
         }
@@ -49,7 +49,7 @@ namespace BirthdayApp.Data
                 DateTime birthday = Convert.ToDateTime(peopleData[2]);
 
                 //Fill in person's class with this data
-                Person person = new Person(firstName, lastName, birthday);
+                Person person = new Person(firstName,lastName,birthday);
 
                 //Add person into people's list
                 peopleList.Add(person);
@@ -57,10 +57,10 @@ namespace BirthdayApp.Data
             return peopleList;
         }
 
-        public override IEnumerable<Person> GetAllPeople(string firstName)
+        public override IEnumerable<Person> GetAllPeople(string name)
         {
             var peopleList = GetAllPeople();
-            return peopleList.Where(person => person.FirstName.Contains(firstName, StringComparison.InvariantCultureIgnoreCase));
+            return peopleList.Where(person => person.FirstName.Contains(name, StringComparison.InvariantCultureIgnoreCase) || person.LastName.Contains(name, StringComparison.InvariantCultureIgnoreCase));
         }
         public override Person GetPersonById(int id)
         {

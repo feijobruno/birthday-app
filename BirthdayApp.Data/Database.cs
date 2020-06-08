@@ -12,7 +12,7 @@ namespace BirthdayApp.Data
 
         public abstract IEnumerable<Person> GetAllPeople();
 
-        public abstract IEnumerable<Person> GetAllPeople(string firstName);
+        public abstract IEnumerable<Person> GetAllPeople(string name);
 
         public abstract Person GetPersonById(int id);
     }

@@ -31,14 +31,14 @@ namespace BirthdayApp.Data
             return peopleList;
         }
 
-        public override IEnumerable<Person> GetAllPeople(string firstName)
+        public override IEnumerable<Person> GetAllPeople(string name)
         {
             /*
              Tips:
              - Where in Linq returns IEnumerable.
              - In queries prefer returns ienumerable.
             */
-            return peopleList.Where(person => person.FirstName.Contains(firstName, StringComparison.InvariantCultureIgnoreCase));
+            return peopleList.Where(person => person.FirstName.Contains(name, StringComparison.InvariantCultureIgnoreCase)||person.LastName.Contains(name, StringComparison.InvariantCultureIgnoreCase));
         }
         public override Person GetPersonById(int id)
         {
