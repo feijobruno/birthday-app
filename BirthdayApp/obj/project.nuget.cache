@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cG/Q8FJJvU1ZxFvsYf9clPNRpPzsCcyPbk3SZMtDncZkPKHU9PM9HhapQqlkeoSEQzTHqn9gbL71KZ65Vte2RQ==",
+  "dgSpecHash": "5Eup3b8hlHGKR9Xc/au2kqO+4qShOMlAlLY9tRFKpVW2TiWXETVGtw9ooXifdlSQy15eaHa/E03WNyvar1QH7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.Console.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

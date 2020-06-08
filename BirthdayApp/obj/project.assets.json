@@ -52,9 +52,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
-      "projectName": "BirthdayApp",
-      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.Console.csproj",
+      "projectName": "BirthdayApp.Console",
+      "projectPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\BirthdayApp.Console.csproj",
       "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\USUARIO\\source\\repos\\infnet\\csharp\\AT\\BirthdayApp\\BirthdayApp\\obj\\",
       "projectStyle": "PackageReference",
