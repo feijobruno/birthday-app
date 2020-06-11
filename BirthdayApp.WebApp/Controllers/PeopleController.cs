@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BirthdayApp.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using BirthdayApp.Data;
 using BirthdayApp.Business;
 
-namespace BirthdayApp.WebApp.Models
+namespace BirthdayApp.WebApp.Controllers
 {
     public class PeopleController : Controller
     {
-
         public PeopleController()
         {
-            Db = new DatabaseFile();
+            Db = new PeopleRepositoryMemory();
         }
 
-        private readonly Database Db;
+        private readonly PeopleRepository Db;
 
         // GET: People
         public ActionResult Index()
@@ -29,7 +28,8 @@ namespace BirthdayApp.WebApp.Models
         // GET: People/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var person = Db.GetPersonById(id);
+            return View(person);
         }
 
         // GET: People/Create
@@ -58,18 +58,20 @@ namespace BirthdayApp.WebApp.Models
         // GET: People/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var person = Db.GetPersonById(id);
+            return View(person);
         }
 
         // POST: People/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Person person)
         {
             try
             {
                 // TODO: Add update logic here
 
+                Db.SalvePerson(person);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,18 +83,19 @@ namespace BirthdayApp.WebApp.Models
         // GET: People/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var person = Db.GetPersonById(id);
+            return View(person);
         }
 
         // POST: People/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Person person)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                Db.DeletePerson(person);
                 return RedirectToAction(nameof(Index));
             }
             catch

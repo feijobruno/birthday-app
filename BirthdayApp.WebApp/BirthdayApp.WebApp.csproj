@@ -13,4 +13,8 @@
     <ProjectReference Include="..\BirthdayApp.Data\BirthdayApp.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
+  </ItemGroup>
+
 </Project>

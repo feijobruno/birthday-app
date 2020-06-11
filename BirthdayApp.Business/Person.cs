@@ -4,15 +4,14 @@ namespace BirthdayApp.Business
 {
     public class Person
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
 
-        public Person(string firstName, string lastName, DateTime birthday)
+        public Person(int id, string firstName, string lastName, DateTime birthday)
         {
-            Random num = new Random();
-            Id = num.Next(1, 21);
+            Id = id;
             FirstName = firstName;
             LastName = lastName;
             Birthday = birthday;
@@ -28,6 +27,8 @@ namespace BirthdayApp.Business
         }
         public Person()
         {
+            Random num = new Random();
+            Id = num.Next(1, 21);
         }
     }
 }
