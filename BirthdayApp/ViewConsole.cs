@@ -20,7 +20,7 @@ namespace BirthdayApp
             ContrastColor("Blue");
             Console.WriteLine("\nAniversariante(s) do dia:");
             Console.ResetColor();
-            Db.ShowBirthdayToday();
+            ShowBirthdayToday();
             Console.WriteLine("\nSelecione uma das opções abaixo: ");
             Console.WriteLine("1 - Pesquisar pessoas ");
             Console.WriteLine("2 - Adicionar pessoas");
@@ -120,7 +120,6 @@ namespace BirthdayApp
                 {
                     ContrastColor("Red");
                     Console.WriteLine("Nenhuma pessoa localizada!");
-
                     Console.ResetColor();
                 }
             }
@@ -233,9 +232,20 @@ namespace BirthdayApp
                 return new PeopleRepositoryFile();
             }
         }
-        public static void ShowAllPeople()
+        static void ShowAllPeople()
         {
             foreach (var person in Db.GetAllPeople())
+            {
+                Console.WriteLine($"{person.Id} - {person.FirstName} {person.LastName} - {person.Birthday.ToString("d")}");
+            }
+        }
+
+        static void ShowBirthdayToday()
+        {
+            var today = DateTime.Today;
+            //var today = new DateTime(DateTime.Today.Year, DateTime.TodayMonth, Birthday.Day);
+            var select = Db.GetAllPeople().Where(person => person.Birthday.Day.Equals(today.Day) && person.Birthday.Month.Equals(today.Month));
+            foreach (var person in select)
             {
                 Console.WriteLine($"{person.Id} - {person.FirstName} {person.LastName} - {person.Birthday.ToString("d")}");
             }

@@ -59,11 +59,6 @@ namespace BirthdayApp.Data
         public override int GetSequenceId()
         {
             throw new NotImplementedException();
-        }
-
-        public override void ShowBirthdayToday()
-        {
-            throw new NotImplementedException();
-        }       
+        }     
     }
 }

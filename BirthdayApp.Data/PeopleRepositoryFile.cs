@@ -122,16 +122,5 @@ namespace BirthdayApp.Data
                 File.AppendAllText(GetNameFile(), format);
             }
         }
-
-        public override void ShowBirthdayToday()
-        {
-            var today = DateTime.Today;
-            //var today = new DateTime(DateTime.Today.Year, DateTime.TodayMonth, Birthday.Day);
-            var select = GetAllPeople().Where(person => person.Birthday.Day.Equals(today.Day) && person.Birthday.Month.Equals(today.Month));
-            foreach (var person in select)
-            {
-                Console.WriteLine($"{person.Id} - {person.FirstName} {person.LastName} - {person.Birthday.ToString("d")}");
-            }
-        }
     }
 }

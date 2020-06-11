@@ -19,7 +19,5 @@ namespace BirthdayApp.Data
         public abstract Person GetPersonById(int id);
 
         public abstract int GetSequenceId();
-
-        public abstract void ShowBirthdayToday();
     }
 }
