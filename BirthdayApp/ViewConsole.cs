@@ -108,7 +108,7 @@ namespace BirthdayApp
                 if (chosenPerson != null)
                 {
                     Console.Clear();
-                    ContrastColor("Yellow");
+                    ContrastColor("GREY");
                     Console.WriteLine("Dados da pessoa:");
                     Console.ResetColor();
                     Console.WriteLine($"ID: {chosenPerson.Id}");
@@ -136,7 +136,7 @@ namespace BirthdayApp
         static void Update()
         {
             Console.Clear();
-            ContrastColor("Yellow");
+            ContrastColor("Gray");
             Console.WriteLine("Dados das pessoas:");
             Console.ResetColor();
             ShowAllPeople();
@@ -186,7 +186,9 @@ namespace BirthdayApp
         static void Delete()
         {
             Console.Clear();
+            ContrastColor("Gray");
             Console.WriteLine("Dados das pessoas:");
+            Console.ResetColor();
             ShowAllPeople();
             Console.WriteLine("Selecione qual ID você deseja excluir:");
             try
@@ -259,7 +261,9 @@ namespace BirthdayApp
                 case "Yellow": Console.BackgroundColor = ConsoleColor.Yellow; break;
                 case "Green": Console.BackgroundColor = ConsoleColor.Green; break;
                 case "Blue": Console.BackgroundColor = ConsoleColor.Blue; break;
+                case "Gray": Console.BackgroundColor = ConsoleColor.Gray; break;
                 default: Console.BackgroundColor = ConsoleColor.Black; break;
+
             }
             Console.ForegroundColor = ConsoleColor.Black;
         }

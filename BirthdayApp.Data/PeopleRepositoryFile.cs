@@ -103,7 +103,6 @@ namespace BirthdayApp.Data
         {
             peopleList.Remove(person);
             File.WriteAllText(GetNameFile(), "");
-            //File.WriteAllText(GetNameFile());
             foreach (var personInsert in peopleList)
             {
                 string format = $"{personInsert.Id},{personInsert.FirstName},{personInsert.LastName},{personInsert.Birthday};";
