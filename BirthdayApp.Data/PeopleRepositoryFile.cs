@@ -11,11 +11,11 @@ using System.Threading;
 
 namespace BirthdayApp.Data
 {
-    public class PeopleRepositoryFile : PeopleRepository
+    public class PeopleRepositoryFile : IPeopleRepository
     {
         private static List<Person> peopleList = new List<Person>();
         private static readonly List<int> sequence = new List<int>();
-        public override void SalvePerson(Person person)
+        public void SalvePerson(Person person)
         {
             bool personAlreadyExist = false;
             if (personAlreadyExist == false)
@@ -34,7 +34,7 @@ namespace BirthdayApp.Data
             return pathFolderDesktop + fileName;
         }
 
-        public override IEnumerable<Person> GetAllPeople()
+        public IEnumerable<Person> GetAllPeople()
         {
             peopleList.Clear();
             string fileName = GetNameFile();
@@ -62,17 +62,17 @@ namespace BirthdayApp.Data
             return peopleList;
         }
 
-        public override IEnumerable<Person> GetAllPeople(string name)
+        public IEnumerable<Person> GetAllPeople(string name)
         {
             return GetAllPeople().Where(person => person.FirstName.Contains(name, StringComparison.InvariantCultureIgnoreCase) || person.LastName.Contains(name, StringComparison.InvariantCultureIgnoreCase));
         }
-        public override Person GetPersonById(int id)
+        public Person GetPersonById(int id)
         {
             return peopleList.Find(person => person.Id.Equals(id));
             //throw new NotImplementedException();
         }
 
-        public override int GetSequenceId()
+        public int GetSequenceId()
         {
             string fileName = GetNameFile();
             int newSequence;
@@ -99,7 +99,7 @@ namespace BirthdayApp.Data
             return newSequence;
         }
 
-        public override void DeletePerson(Person person)
+        public void DeletePerson(Person person)
         {
             peopleList.Remove(person);
             File.WriteAllText(GetNameFile(), "");
@@ -110,7 +110,7 @@ namespace BirthdayApp.Data
             }
         }
 
-        public override void UpdatePerson(Person personGet, Person personSet)
+        public void UpdatePerson(Person personGet, Person personSet)
         {
             peopleList.Remove(personGet);
             peopleList.Add(personSet);

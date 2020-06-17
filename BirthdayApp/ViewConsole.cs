@@ -142,7 +142,7 @@ namespace BirthdayApp
                 Person personSet = new Person();
                 if (personGet == null)
                 {
-                    FeaturedText("essoa não encontrada para o Id forncecido", "Red");
+                    FeaturedText("Pessoa não encontrada para o Id forncecido", "Red");
                 }
                 else
                 {
@@ -206,7 +206,7 @@ namespace BirthdayApp
         }
 
         //CREATE A PROPERTY DATABASE 
-        public static PeopleRepository Db
+        public static IPeopleRepository Db
         {
             get
             {

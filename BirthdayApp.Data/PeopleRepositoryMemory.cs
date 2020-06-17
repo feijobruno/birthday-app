@@ -1,37 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using BirthdayApp.Business;
 using System.Linq;
+using BirthdayApp.Business;
+using System.Threading.Tasks;
+
 
 namespace BirthdayApp.Data 
 {
-    public class PeopleRepositoryMemory : PeopleRepository
+    public class PeopleRepositoryMemory : IPeopleRepository
     {
         private static List<Person> peopleList = new List<Person>();
 
-        public override void SalvePerson(Person person)
+        public void SalvePerson(Person person)
         {
-            bool personAlreadyExist = false;
-            foreach(var peopleFound in peopleList)
-            {
-                if(peopleFound == person)
-                {
-                    personAlreadyExist = true;
-                    break;
-                }
-            }
-            if(personAlreadyExist == false){
-                peopleList.Add(person);
-            }          
+            //if (ModelState.IsValid == false)
+            //{
+            //    return View();
+            //}
+                
+
+            peopleList.Add(person);          
         }
 
-        public override IEnumerable<Person> GetAllPeople()
+        public IEnumerable<Person> GetAllPeople()
         {
             return peopleList;
         }
 
-        public override IEnumerable<Person> GetAllPeople(string name)
+        public IEnumerable<Person> GetAllPeople(string name)
         {
             /*
              Tips:
@@ -40,23 +36,23 @@ namespace BirthdayApp.Data
             */
             return peopleList.Where(person => person.FirstName.Contains(name, StringComparison.InvariantCultureIgnoreCase)||person.LastName.Contains(name, StringComparison.InvariantCultureIgnoreCase));
         }
-        public override Person GetPersonById(int id)
+        public Person GetPersonById(int id)
         {
             //return peopleList.Find(person => person.Id == id);
             throw new NotImplementedException();
         }
 
-        public override void DeletePerson(Person person)
+        public void DeletePerson(Person person)
         {
             peopleList.Remove(person);
         }
 
-        public override void UpdatePerson(Person personGet, Person personSet)
+        public void UpdatePerson(Person personGet, Person personSet)
         {
             throw new NotImplementedException();
         }
 
-        public override int GetSequenceId()
+        public int GetSequenceId()
         {
             throw new NotImplementedException();
         }     
