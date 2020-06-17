@@ -18,7 +18,6 @@ namespace BirthdayApp.Data
             //    return View();
             //}
                 
-
             peopleList.Add(person);          
         }
 
