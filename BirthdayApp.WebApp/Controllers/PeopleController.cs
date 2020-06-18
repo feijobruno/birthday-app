@@ -16,7 +16,7 @@ namespace BirthdayApp.WebApp.Controllers
             Db = new PeopleRepositoryMemory();
         }
 
-        private readonly PeopleRepository Db;
+        private readonly IPeopleRepository Db;
 
         // GET: People
         public ActionResult Index()

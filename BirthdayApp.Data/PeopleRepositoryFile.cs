@@ -38,7 +38,17 @@ namespace BirthdayApp.Data
         {
             peopleList.Clear();
             string fileName = GetNameFile();
-            string result = File.ReadAllText(fileName);
+            string result; 
+            try
+            {
+                result = File.ReadAllText(fileName);
+            }
+            catch
+            {
+                File.AppendAllText(fileName, null);
+                result = File.ReadAllText(fileName);
+            }
+            
 
             //Identify person
             string[] people = result.Split(';');

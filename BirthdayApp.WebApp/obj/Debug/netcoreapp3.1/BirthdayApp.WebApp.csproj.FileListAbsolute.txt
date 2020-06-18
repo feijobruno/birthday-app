@@ -115,3 +115,5 @@ C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\ob
 C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\obj\Debug\netcoreapp3.1\BirthdayApp.WebApp.dll
 C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\obj\Debug\netcoreapp3.1\BirthdayApp.WebApp.pdb
 C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\obj\Debug\netcoreapp3.1\BirthdayApp.WebApp.genruntimeconfig.cache
+C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\obj\Debug\netcoreapp3.1\BirthdayApp.WebApp.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\source\repos\infnet\csharp\AT\BirthdayApp\BirthdayApp.WebApp\obj\Debug\netcoreapp3.1\BirthdayApp.WebApp.MvcApplicationPartsAssemblyInfo.cache

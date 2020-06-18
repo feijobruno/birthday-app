@@ -3,47 +3,30 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@*@model List<People>*@
 <p>
-    <a asp-action="Create">Create New Person</a>
+    <a class="btn btn-primary btn-sm" asp-action="Create">New Person</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th></th>
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Birthday</th>
+            <th colspan="2">Action</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>@item.Id</td>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Birthday</td>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Birthday)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <a class="btn btn-warning btn-sm" href="/People/Edit?id=@item.Id">Edit</a>
+                <a class="btn btn-danger btn-sm" href="/People/Delete?id=@item.Id">Delete</a>
             </td>
         </tr>
 }
